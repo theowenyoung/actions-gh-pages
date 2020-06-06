@@ -20,7 +20,7 @@ export async function copyAssets(
   const files = fs.readdirSync(publishDir);
   core.debug(`${files}`);
   for await (const file of files) {
-    if (file.endsWith('.git') || file.endsWith('.github')) {
+    if (file.endsWith('.git')) {
       continue;
     }
     const filePath = path.join(publishDir, file);
